@@ -6,6 +6,7 @@ import sys
 
 def state_List(username, password, databaseName):
     ''' print all states in the database '''
+
     dbase = MySQLdb.connect(
             host = "localhost",
             port = 3306,
@@ -13,11 +14,12 @@ def state_List(username, password, databaseName):
             passwd = "password",
             db = "databaseName"
             )
+
     cur = dbase.cursor()
-    cur.execute("SELECT * FROM  states ORDER BY states.id ASC")
+    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
     result = cur.fetchall()
 
-    for row in results:
+    for row in result:
         print(row)
 
     cur.close()
