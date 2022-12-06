@@ -14,7 +14,7 @@ def state_List(username, password, databaseName):
             db = "databaseName"
             )
     cur = dbase.cursor()
-    cur.execute("SELECT * FROM  state ORDER BY state.id ASC")
+    cur.execute("SELECT * FROM  states ORDER BY states.id ASC")
     result = cur.fetchall()
 
     for row in results:
