@@ -23,7 +23,7 @@ def state_List(username, password, databaseName):
     cur.close()
     dbase.close()
 
-    if __name__ == "__main__":
+if __name__ == "__main__":
     argv = sys.argv[1:]
     username, password, databaseName = argv
     state_list(username, password, databaseName)
