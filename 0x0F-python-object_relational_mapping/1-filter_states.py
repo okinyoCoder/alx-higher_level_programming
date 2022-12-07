@@ -4,7 +4,7 @@ script that list all states with name starting with N
 from a database hbtn_0e_0_usa 
 """
 import MySQLdb
-import sys
+from sys import argv
 
 def search_state(username, password, databaseName):
     dbase = MySQLdb.connect(
@@ -28,6 +28,8 @@ def search_state(username, password, databaseName):
     dbase.close()
 
 if __name__ == "__main__":
-    argv = sys.argv[1:]
-    username, password, db_nam = argv
-    search_state(username, password, db_nam)
+    search_state(
+            username=argv[1], 
+            password=argv[2], 
+            databaseName=argv[3]
+            )
