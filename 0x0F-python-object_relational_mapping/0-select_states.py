@@ -2,7 +2,7 @@
 '''Script that lists all states from database hbtn_0e_0_usa '''
 
 import MySQLdb
-import sys
+from sys import argv
 
 def state_List(username, password, databaseName):
     ''' print all states in the database '''
