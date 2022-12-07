@@ -6,13 +6,13 @@ from a database hbtn_0e_0_usa
 import MySQLdb
 from sys import argv
 
-def search_state(username, password, databaseName):
+if __name __ == "__main__":
     dbase = MySQLdb.connect(
             host="localhost",
             port=3306,
-            user="username",
-            passwd="password",
-            db="databaseName"
+            user=argv[1],
+            passwd=argv[2],
+            db=argv[3]
             )
     cur = dbase.cursor()
     cur.execute(
@@ -26,9 +26,3 @@ def search_state(username, password, databaseName):
 
     cur.close()
     dbase.close()
-
-if __name__ == "__main__":
-    username=argv[1], 
-    password=argv[2], 
-    databaseName=argv[3]
-    search_state(username, password, databaseName)
