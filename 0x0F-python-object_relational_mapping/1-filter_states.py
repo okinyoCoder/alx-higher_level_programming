@@ -6,7 +6,7 @@ from a database hbtn_0e_0_usa
 import MySQLdb
 from sys import argv
 
-if __name __ == "__main__":
+if __name __ == '__main__':
     dbase = MySQLdb.connect(
             host="localhost",
             port=3306,
@@ -16,8 +16,8 @@ if __name __ == "__main__":
             )
     cur = dbase.cursor()
     cur.execute(
-            """SELECT * FROM states WHERE name 
-            LIKe 'N%' ORDER BY state.id ASC"""
+            "SELECT * FROM states WHERE name \ 
+            LIKe 'N%' ORDER BY state.id ASC"
             )
     result = cur.fetchall()
 
