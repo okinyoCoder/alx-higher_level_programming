@@ -28,8 +28,7 @@ def search_state(username, password, databaseName):
     dbase.close()
 
 if __name__ == "__main__":
-    search_state(
-            username=argv[1], 
-            password=argv[2], 
-            databaseName=argv[3]
-            )
+    username=argv[1], 
+    password=argv[2], 
+    databaseName=argv[3]
+    search_state(username, password, databaseName)
