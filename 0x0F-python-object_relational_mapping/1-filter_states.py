@@ -23,6 +23,3 @@ if __name__ == '__main__':
 
     for row in result:
         print(row)
-
-    cur.close()
-    dbase.close()
