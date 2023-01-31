@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-'''Square class with a private instance attritube'''
+''' A class Square that defines a square by:
+    Private instance attribute: size
+'''
+
 
 class Square():
     '''class constructor'''
