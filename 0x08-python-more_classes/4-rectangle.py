@@ -63,6 +63,12 @@ class Rectangle:
                 new_str += '#'
         return new_str
 
-   def __repr__(self):
-        """ Return a string representation of the rectangle """
-        return 'Rectangle({}, {})'.format(self.width, self.height)
+        return self.__draw_rectangle()
+
+    def __repr__(self):
+        """
+        Returns the representation of the Rectangle.
+        """
+        w = str(eval('self.width'))
+        h = str(eval('self.height'))
+        return 'Rectangle({}, {})'.format(w, h)
