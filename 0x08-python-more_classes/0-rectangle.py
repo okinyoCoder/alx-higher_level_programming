@@ -1,6 +1,11 @@
 #!/usr/bin/python3
-"""Empty rectangle class"""
+"""
+A module with a Rectangle that does nothing
+"""
+
 
 class Rectangle:
-    """No attributes and methods"""
+    """
+    An empty Rectangle class
+    """
     pass
