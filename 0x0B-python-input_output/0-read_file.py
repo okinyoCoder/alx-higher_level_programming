@@ -2,11 +2,7 @@
 """Model with a function that reads a text file"""
 
 def read_file(filename=""):
-    """Function that reads a text file and prints it to stdout
-       Args:
-           Filename: file that should be read
-       Return: returns nothing
-    """
+    """Function that reads a text file and prints it"""
     with open('filename', encoding = "utf-8") as f:
         words = f.read()
-    print(words, end="")
+        print(words, end="")
