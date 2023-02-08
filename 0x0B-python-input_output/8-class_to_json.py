@@ -3,4 +3,5 @@
 '''
 
 def class_to_json(obj):
-    return obj.__dict__
+     """ retuns the dictionary description with simple data structure """
+     return obj.__dict__
