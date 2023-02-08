@@ -1,33 +1,30 @@
 #!/usr/bin/python3
-""" module with class student """
+'''11-student.py
+'''
+
 
 class Student:
-    """student class"""
+    ''' Student class '''
+
     def __init__(self, first_name, last_name, age):
-        """ class constant """
+        ''' Constructor '''
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        """ method that retrieves dictionary repre of student """
-
-        class_d = self.__dict__
-        sel_d = dict()
+        ''' Method that returns directory description with filter '''
 
         if isinstance(attrs, list):
-            for attr in attrs:
-                if not isinstance(attr, str):
-                    return class_d
+            if all(isinstance(attr, str) for attr in attrs):
+                res = {}
+                for i in attrs:
+                    if i in self.__dict__:
+                        res[i] = self.__dict__[i]
+                return res
+        return self.__dict__
 
-                if attr in class_d:
-                    sel_d[attr] = class_d[attr]
-
-            return sel_d
-
-        return class_d
-
-        def reload_from_json(self, json):
+    def reload_from_json(self, json):
         ''' Replaces all attributes of the Student instance '''
         for attr in json:
             self.__dict__[attr] = json[attr]
