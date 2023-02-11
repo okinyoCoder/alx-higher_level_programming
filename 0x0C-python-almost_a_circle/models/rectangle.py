@@ -128,3 +128,13 @@ class Rectangle(Base):
                     self.y = v
         else:
             self.__init__(self.width, self.height, self.x, self.y)
+
+    def to_dictionary(self):
+        """Return the dictionary representation of a Rectangle."""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
