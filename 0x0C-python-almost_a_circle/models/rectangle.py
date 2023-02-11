@@ -102,3 +102,29 @@ class Rectangle(Base):
         return "[Rectangle] (<>) <>/<> - <>/<>".format(self.id, 
                                                        self.x, self.y, 
                                                        self.width, self.height)
+
+    def update(self, *args):
+        ''' update rectangle function '''
+        if len(args) != 0:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        elif kwargs and len(kwargs) != 0:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = v
+                elif k == "width":
+                    self.width = v
+                elif k == "height":
+                    self.height = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
+        else:
+            self.__init__(self.width, self.height, self.x, self.y)
