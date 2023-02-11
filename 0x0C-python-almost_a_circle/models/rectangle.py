@@ -1,4 +1,7 @@
 #!/usr/bin/python
+
+from models.base import Base
+
 '''  class Rectangle that inherits from Base '''
 
 class Rectangle(Base):
@@ -93,3 +96,9 @@ class Rectangle(Base):
             [print(" ", end="") for x in range(self.x)]
             [print("#", end="") for w in range(self.width)]
             print("")
+
+    def __str__():
+        ''' function that prints content of a rectangle '''
+        return "[Rectangle] (<>) <>/<> - <>/<>".format(self.id, 
+                                                       self.x, self.y, 
+                                                       self.width, self.height)
