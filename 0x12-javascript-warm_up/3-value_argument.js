@@ -3,12 +3,11 @@
 script that prints a message depending
 of the number of arguments passed
 */
+import { argv } from 'node:process';
 
 const argvLength = process.argv.length;
 if (argvLength < 3) {
   console.log('No argument');
 } else if (argvLength === 3) {
-  console.log('Argument found');
-} else {
-  console.log('Arguments found');
+  console.log(argv[3]);
 }
