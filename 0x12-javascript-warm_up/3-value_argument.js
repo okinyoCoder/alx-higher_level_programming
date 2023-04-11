@@ -6,6 +6,7 @@ of the number of arguments passed
 
 const process = require('process');
 const varArray = process.argv;
+
 if (varArray[2] === false) {
   console.log('No argument');
 } else {
