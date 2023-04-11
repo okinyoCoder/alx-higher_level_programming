@@ -8,6 +8,6 @@ import { argv } from 'node:process';
 const argvLength = process.argv.length;
 if (argvLength < 3) {
   console.log('No argument');
-} else if (argvLength === 3) {
+} else {
   console.log(argv[2]);
 }
