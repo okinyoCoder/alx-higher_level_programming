@@ -4,6 +4,7 @@ script that prints a message depending
 of the number of arguments passed
 */
 
+const process = require('process');
 const firstVar = process.argv[2];
 const argvLength = process.argv.length;
 if (argvLength < 3) {
