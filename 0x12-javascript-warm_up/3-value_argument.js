@@ -3,11 +3,11 @@
 script that prints a message depending
 of the number of arguments passed
 */
-import { argv } from 'node:process';
 
+const firstVar = process.argv[2];
 const argvLength = process.argv.length;
 if (argvLength < 3) {
   console.log('No argument');
 } else {
-  console.log(argv[2]);
+  console.log(firstVar);
 }
