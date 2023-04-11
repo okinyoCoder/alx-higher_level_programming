@@ -5,10 +5,9 @@ of the number of arguments passed
 */
 
 const process = require('process');
-const firstVar = process.argv[2];
-const argvLength = process.argv.length;
-if (argvLength < 3) {
+const varArray = process.argv;
+if (varArray[2] === null) {
   console.log('No argument');
 } else {
-  console.log(firstVar);
+  console.log(varArray[2]);
 }
