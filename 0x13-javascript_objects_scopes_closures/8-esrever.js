@@ -4,10 +4,9 @@
 */
 
 exports.esrever = function (list) {
-  const original = list.sort();
   const newArr = [];
-  for (let i = original.length - 1; i >= 0; i--) {
-    newArr.push(original[i]);
+  for (let i = list.length - 1; i >= 0; i--) {
+    newArr.push(list[i]);
   }
   return newArr;
 };
