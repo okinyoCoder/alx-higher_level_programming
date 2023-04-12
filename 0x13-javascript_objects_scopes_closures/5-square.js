@@ -3,6 +3,7 @@
  *class Square that defines a square and inherits from
  *Rectangle of 4-rectangle.js
 */
+
 const Rectangle = require('./4-rectangle');
 
 class Square extends Rectangle {
@@ -10,4 +11,5 @@ class Square extends Rectangle {
     super(size, size);
   }
 }
-module.export = Square;
+
+module.exports = Square;
