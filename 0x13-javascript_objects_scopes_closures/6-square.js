@@ -9,7 +9,7 @@ const prevClass = require('./5-square');
 class Square extends prevClass {
   charPrint (c) {
     if (c === undefined) {
-      this.print();
+      super.print();
     } else {
       for (let i = 0; i < this.height; i++) {
         console.log('c'.repeat(this.width));
