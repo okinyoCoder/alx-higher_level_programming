@@ -1,29 +1,23 @@
 #!/usr/bin/node
 /**
- * function that performs bubble sort
- * arranges array items from small to large
+ *script that searches the second biggest integer in
+ *the list of arguments
+ *
 */
-function sort(myArr){
-	let n = myArr.length;
+const process = require('process');
+const arrayList = process.argv;
 
-	// alterate through array items
-	for (let i = 0; i < n-1; i++){
-		//compare array items through every alteration
-		for ( let j = 0; j < n - i -1; j++){
-			// values of array are swapped in ascending order
-			if (myArr[j] > myArr[j+1]{
-				let temp = myArr[j];
-				myArr[j] = myArr[j+1];
-				myArr[j+1] = temp;
-			}
-		}
-	}
-	return myArr;
-}
+// slice array from second index and sort array
+const x = arrayList.slice(2).sort();
 
-if (process.argv.length <= 3) {
-	console.log(0);
+if (x.length < 3) {
+  console.log('0');
+} else if (x.length === 3) {
+  console.log('0');
 } else {
-	let arr = sort(process.argv.slice(2, process.argv.length));
-	console.log(arr.at(-2));
+  /* for (let i = 0; i < x.length; i++) {
+    console.log(x[i]);
+  }
+ */
+  console.log(x[x.length - 2]);
 }
