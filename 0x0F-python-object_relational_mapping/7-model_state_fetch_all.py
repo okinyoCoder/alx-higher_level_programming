@@ -5,6 +5,8 @@
 from sys import argv
 from model_state import Base
 from model_state import State
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine
 
 if __name__ = '__main__':
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
