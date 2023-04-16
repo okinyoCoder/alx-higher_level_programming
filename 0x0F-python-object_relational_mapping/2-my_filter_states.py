@@ -13,7 +13,7 @@ dbase = MySQLdb.connect(
         passwd=argv[2]
         db=argv[3])
 
-cur = dbase.Cursor()
+cur = dbase.cursor()
 cur.execute("SELECT * FROM states WHERE name={} \
          ORDER BY states.id ASC".format(argv[4]))
 rows = cur.fetchall()
