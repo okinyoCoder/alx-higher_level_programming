@@ -21,8 +21,7 @@ if __name__ == "__main__":
             ORDER BY cities.id ASC", (argv[4], ))
     result = cur.fetchall()
 
-    for row in result:
-        print(row, end="")
-
+    if result is not None:
+        print(", ".join([row[1] for row in result]))
     cur.close()
     dbase.close()
