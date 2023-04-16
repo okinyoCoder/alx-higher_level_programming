@@ -22,7 +22,7 @@ if __name__ == "__main__":
     result = cur.fetchall()
 
     for row in result:
-        print(row)
+        print(row, end="")
 
     cur.close()
     dbase.close()
