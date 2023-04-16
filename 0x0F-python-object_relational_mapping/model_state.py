@@ -6,9 +6,10 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
+
+
 class State(Base):
-    """ 
-    class that inherits from Base
+    """ class that inherits from Base
     Attributes:
         id (int): id of state
         name (str): name of state
