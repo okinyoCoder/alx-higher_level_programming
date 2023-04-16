@@ -12,7 +12,8 @@ dbase = MySQLdb.connect(
         db="argv[3]")
 
 cur = dbase.Cursor()
-cur.execute("SELECT * FROM states WHERE name="argv[4]"")
+cur.execute("SELECT * FROM states WHERE name='{argv[4]}' \
+         ORDER BY states.id ASC")
 rows = cur.fetchall()
 
 for row in rows:
