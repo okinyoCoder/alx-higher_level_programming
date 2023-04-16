@@ -13,11 +13,12 @@ if __name__ == "__main__":
             passwd=argv[2],
             db=argv[3])
     cur = dbase.cursor()
-    cur.execute("SELECT  cities.name \
+    cur.execute("SELECT cities.name \
             FROM cities \
-            WHERE state_id == \
-            ("SELECT states.id FROM states WHERE states.name={}".format(\
-            "argv[4]")) ORDER BY cities.id ASC")
+            INNER JOIN states \
+            ON cities.state_id = states.id \
+            WHERE states.id = %s
+            ORDER BY cities.id ASC", (argv[4], ))
     result = cur.fetchall()
 
     for row in result:
