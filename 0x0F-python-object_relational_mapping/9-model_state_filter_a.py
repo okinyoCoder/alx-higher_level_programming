@@ -13,8 +13,9 @@ if __name__ == '__main__':
     engine = create_engine(dbase_url)
     Session = sessionmaker(bind=engine)
     session = Session()
-    objs = session.query(State).filter(State.name.like('a%')
+    objs = session.query(State).filter(State.name.contains('a')
             ).order_by(State.id).all()
     if obj is not None:
         for obj in objs:
             print("{}: {}".format(obj.id, obj.name))
+    session.close()
