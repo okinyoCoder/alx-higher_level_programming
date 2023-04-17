@@ -19,4 +19,4 @@ if __name__ == "__main__":
     if obj is not None:
         print("{}: {}".format(obj.id, obj.name))
     else:
-        print("nothing")
+        print("Nothing")
