@@ -13,7 +13,7 @@ if __name__ == '__main__':
     engine = create_engine(dbase_url)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for obj in session.query(State).whereclause(State.id == 1):
+    for obj in session.query(State).order_by(State.id).first():
         if session.query(State) is not None:
             print("{}: {}".format(obj.id, obj.name))
         else:
