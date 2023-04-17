@@ -15,7 +15,7 @@ if __name__ == '__main__':
     session = Session()
     objs = session.query(State).filter(State.name.contains('a')
             ).order_by(State.id).all()
-    if obj is not None:
-        for obj in objs:
-            print("{}: {}".format(obj.id, obj.name))
+
+    for obj in objs:
+        print("{}: {}".format(obj.id, obj.name))
     session.close()
