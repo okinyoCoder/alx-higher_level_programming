@@ -7,7 +7,7 @@ from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     dbase_url = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
             argv[i], argv[2], argv[3])
     engine = create_engine(dbase_url)
