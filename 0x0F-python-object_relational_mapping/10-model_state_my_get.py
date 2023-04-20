@@ -15,7 +15,5 @@ if __name__ == ' __main__':
     Session = sessionmaker(bind=engine)
     session = Session()
     obj = session.query(State).filter(State.name == argv[4]).first()
-    if not obj:
-        print("Not found")
-    else:
-        print(f"{obj}")
+    print('Not found' if not state else state.id)
+    session.close()
