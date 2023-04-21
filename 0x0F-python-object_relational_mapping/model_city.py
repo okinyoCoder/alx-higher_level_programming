@@ -1,14 +1,23 @@
 #!/usr/bin/python3
-"""file contains the class definition of a City"""
-from sqlalchemy import column, String, Integer, ForeignKey
+"""
+This script defines a City class
+to work with MySQLAlchemy ORM.
+"""
 from model_state import Base, State
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, ForeignKey
 
 
-class city(Base):
-    """class represent table City of a database"""
+class City(Base):
+    """City class
+    Attributes:
+        __tablename__ (str): The table name of the class
+        id (int): The id of the class
+        name (str): The name of the class
+        state_id (int): The state the city belongs to
+    """
 
-    __tablename__ = "cities"
-    id = Column(Integer, Primary_Key=True)
-    state_id = Column(Integer, nullable=False, ForeignKey=('states.id'))
+    __tablename__ = 'cities'
+
+    id = Column(Integer, primary_key=True)
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
     name = Column(String(128), nullable=False)
