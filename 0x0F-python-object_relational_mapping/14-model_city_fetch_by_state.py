@@ -8,13 +8,15 @@ from sqlalchemy.orm import sessionmaker
 from sys import argv
 
 if __name__ == '__main__':
+
     db_url = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
             argv[1], argv[2], argv[3])
     engine = create_engine(db_url)
     Session = sessionmaker(engine)
     session = Session()
 
-    result = session.query(City).join(State).all()
-    for city, state in result:
+    result = session.query(City, State).join(State)
+    for city, state in result.all():
         print('{}: ({}) {}'.format(state.name, city.id, city.name))
-    session.close()
+    session.commit()
+    session.Close()
