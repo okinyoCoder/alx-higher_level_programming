@@ -14,7 +14,7 @@ if __name__ == "__main__":
     engine = create_engine(db_url)
     Session = sessionmaker(engine)
     session = Session()
-    obj = session.query(State).filter(State.id == 2)
+    obj = session.query(State).filter(State.id == 2).first()
     obj.name = "New Mexico"
     session.commit()
 
