@@ -14,10 +14,9 @@ if __name__ == "__main__":
     engine = create_engine(db_url)
     Session = sessionmaker(bind=engine)
     session = Session()
-    obj = session.query(State).filter(State.name.contains('a')).all()
-    if obj is not None:
-        for state in obj:
-            session.delete(state)
+    states = session.query(State).filter(State.name.like("%a%")).all()
+    for state in states:
+        session.delete(state)
 
     session.commit()
     session.close()
