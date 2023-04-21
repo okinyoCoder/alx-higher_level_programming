@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """script that lists all State objects, and
-   corresponding City objects, contained in 
+   corresponding City objects, contained in
    the database hbtn_0e_101_usa
 """
 from relationship_state import Base, State
