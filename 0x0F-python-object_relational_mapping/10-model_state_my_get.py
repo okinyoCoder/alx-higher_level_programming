@@ -12,8 +12,10 @@ if __name__ == "__main__":
     engine = create_engine(
             "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
                 argv[1], argv[2], argv[3]), pool_pre_ping=True)
-    Session = sessionmaker(engine)
+    Session = sessionmaker(bind=engine)
     session = Session()
     obj = session.query(State).filter(State.name == argv[4]).first()
-    print('Not found' if not state else state.id)
-    session.close()
+    if state is not None:
+        print('{0}'.format(state.id))
+    else:
+        print("Not found")
