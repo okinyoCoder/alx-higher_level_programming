@@ -4,7 +4,7 @@
    found in the header of the response
 """
 
-from argv import sys
+from sys import argv
 import urllib.request
 
 if __name__ == '__main__':
