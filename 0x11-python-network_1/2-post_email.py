@@ -3,13 +3,14 @@
    request to the passed URL with the email as a parameter
    and displays the body of the response (decoded in utf-8)
 """
-from argv import sys
+from sys import argv
 import urllib.request
+import urllib.parse
 
-if '__name__' == '__main__':
-    data = argv[2]
-    data = data.encode('utf-8')
+if __name__ == '__main__':
+    value = {'email': argv[2]}
+    data = urllib.parse.urlencode(value).encode('ascii') 
     req = urllib.request.Request(argv[1], data)
     with urllib.request.openurl(req) as response:
-        result = response.read()
-        print('Your email is: {}'.format(result.))
+        result = response.read().decode('utf-8')
+        print('Your email is: {}'.format(result))
