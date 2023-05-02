@@ -18,7 +18,7 @@ if __name__ == '__main__':
         json_file = r.json()
         if json_file:
             print("[{}] {}".format(
-                response.get("id"), response.get("name")))
+                json_file.get("id"), json_file.get("name")))
         else:
             print("No result")
     except ValueError as e:
