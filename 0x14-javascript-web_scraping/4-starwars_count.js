@@ -2,24 +2,21 @@
 
 const request = require('request');
 const url = process.argv[2];
+let count = 0;
+const ID = '18';
 
-request.get(url, function (error, response, body) {
+request.get(url, (error, response, body) => {
   if (error) {
     console.log(error);
   } else {
-    const ID = '18';
     const data = JSON.parse(body);
-    const len = data;
-    const count = 0;
-
-    for (const movie of data.results) {
-      for (const character of movie.characters) {
-        console.log(character);
-        if (character === ID) {
+    data.results.forEach((film) => {
+      film.characters.forEach((character) => {
+        if (character.includes(ID)) {
           count += 1;
         }
-      }
-    }
+      });
+    });
     console.log(count);
   }
 });

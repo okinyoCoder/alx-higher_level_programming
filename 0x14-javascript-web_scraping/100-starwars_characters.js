@@ -9,8 +9,9 @@ request.get(url, function (error, response, body) {
     console.log(error);
   } else {
     const movies = JSON.parse(body);
+
     for (character of movies.characters) {
-      request.get(character, (error, response, body) => {
+      request.get(character, function (error, response, body) {
         if (error) {
           console.log(error);
         } else {
